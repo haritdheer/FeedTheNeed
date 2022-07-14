@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <title>Contact us</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .main-wrapper{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .bg-1{
+            width: 100%;
+            min-height: 30vh;
+            background-color: rgb(92, 92, 224);
+            position: absolute;
+            top: 0;
+        }
+        .bg-2{
+            width: 100%;
+            min-height: 70vh;
+        }
+        .cards-container{
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(3 ,auto);
+            justify-content: center;
+            align-items: center;
+            grid-gap: 20px;
+            padding: 30px;
+        }
+        .top-heading{
+            position: absolute;
+            top: 20px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .top-heading h1{
+            font-size: 60px;
+            font-weight: 900;
+        }
+        .top-heading p{
+            font-size: 30px;
+        }
+        .cards{
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+            flex-direction: column;
+            background-color: white;
+            padding: 30px 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.178);  
+            transition: .1s all ease; 
+        }
+        .cards:hover{
+            box-shadow: 35px 35px 35px rgba(0, 0, 0, 0.178);
+        }
+        .las{
+            font-size: 60px;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: rgb(92, 92, 224);
+            border: 2px solid transparent;
+            color: white;
+        }
+        .heading{
+            font-size: 30px;
+            padding: 5px 0px;
+        }
+        .text{
+            font-size: 20px;
+        }
+        @media screen and (max-width: 1400px) {
+            .cards-container{
+                
+                grid-template-columns: repeat(2 ,auto);
+                grid-gap: 0px;
+                padding: 30px;
+                top: 100px;
+            }
+        }
+        @media screen and (max-width: 748px) {
+            .cards{
+                padding: 20px;
+            }
+            .cards-container{
+                grid-template-columns: repeat(1 ,auto);
+            }
+            .cards .heading{
+                font-size: 23px;
+                font-weight: 900;
+            }
+        }
+        
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">No-FoodWasting</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'aboutUs' %}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'contactUs' %}">Service</a>
+              </li>
+             
+             </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main-wrapper">
+        <div class="bg-1"></div>
+        <div class="bg-2"></div>
+        
+        <div class="top-heading">
+            <h1>Services</h1>
+        </div>
+    
+        <div class="cards-container">
+            
+            <div class="cards">
+                <div class="icon"><i class="las la-code"></i></div>
+                <div class="heading">Providing Food</div>
+                <div class="text">We aim to bring benefits across the spectrum of society and help provide access to food to those who don’t have adequate means to access it.</div>
+            </div>
+            <div class="cards">
+                <div class="icon"><i class="las la-server"></i></div>
+                <div class="heading">NGO'S</div>
+                <div class="text">To raise awareness about food loss and food waste amongst citizens and bring about behavioral change in them to prevent food waste at home, school or at workplace</div>
+            </div>
+            <div class="cards">
+                <div class="icon"><i class="las la-palette"></i></div>
+                <div class="heading">Help Poor People</div>
+                <div class="text">We aim to bring benefits across the spectrum of society and help provide access to food to those who don’t have adequate means to access it.</div>
+            </div>
+           
+            <div class="cards">
+                <div class="icon"><i class="las la-envelope"></i></div>
+                <div class="heading">Marketing</div>
+                <div class="text">To raise awareness among Food businesses by encouraging them to adopt good practices to reduce food loss and food waste in their supply chains and sharing good practices </div>
+            </div>
+           
+            
+        </div>  
+        
+    </div>
+
+</body>
+</html>
